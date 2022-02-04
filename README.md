@@ -1,4 +1,4 @@
-# cwl-run-tests
+# run-tests
 
 It is a custom Github Action for running tests for CWL workflows.
 
@@ -23,7 +23,7 @@ jobs:
 
       - name: Run tests
         id: run-tests
-        uses: tom-tan/cwl-run-tests@v1.0.0
+        uses: common-workflow-lab/run-tests@v1.0.0
         with:
           test-list: test.yml
           runner: cwltool
