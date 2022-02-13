@@ -52,4 +52,4 @@ The `skip-python-install` parameter is useful when CWL runner requires specific 
 
 | Parameters | Description |
 |---|---|
-| `result` | file name that stores the result of conformance tests in JUnit XML format |
+| `result` | file name that stores the result of tests in JUnit XML format |
