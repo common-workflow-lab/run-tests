@@ -1,6 +1,11 @@
 name: 'Run tests with specified CWL runner'
 author: 'Tomoya Tanjo'
 description: 'Run tests with specified CWL runner'
+
+branding:
+  icon: check
+  color: yellow
+
 inputs:
   test-list:
     description: 'A file that lists test cases in cwltest format'
