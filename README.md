@@ -23,7 +23,7 @@ jobs:
 
       - name: Run tests
         id: run-tests
-        uses: common-workflow-lab/run-tests@v1.0.0
+        uses: common-workflow-lab/run-tests@v1
         with:
           test-list: test.yml
           runner: cwltool
