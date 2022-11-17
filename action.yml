@@ -38,7 +38,7 @@ runs:
   steps:
     - name: Setup Python for testing
       if: ${{ inputs.skip-python-install == 'false' }}
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: '3.9.x'
     - name: Install cwltest
@@ -49,15 +49,15 @@ runs:
       shell: bash
       run: |
         cwltest --tool ${{ inputs.runner }} --test ${{ inputs.test-list }} --timeout=${{ inputs.timeout }} --junit-xml=junit.xml; ret=$?
-        echo "::set-output name=result::junit.xml"
+        echo "result=junit.xml" >> $GITHUB_OUTPUT
         if [ ${{ inputs.allow-failure }} != 'false' ]; then
           exit $ret
         else
           exit 0
         fi
     - name: Publish the result of tests
-      uses: EnricoMi/publish-unit-test-result-action@v1
+      uses: EnricoMi/publish-unit-test-result-action@v2
       if: always()
       with:
-        files: junit.xml
+        junit_files: junit.xml
         check_name: ${{ inputs.result-title }}
